@@ -22,15 +22,8 @@ namespace MarsRovers
 
             Rover rover = new Rover(1, 2, 'N');
             rover.commandQueue = firstRoverCommandQueue.ToCharArray();
-            
-            RoverOperator roverOperator = new RoverOperator();
-            ICommands command = null;
 
-            for (int i = 0; i < rover.commandQueue.Count(); i++)
-            {
-                command = roverOperator.GetCommand(rover.commandQueue[i]);
-                command.Execute(rover);
-            }
+            rover.ExecuteCommandQueue();
             
         }
     }
