@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MarsRovers
 {
-    class RoverOperator
+    public class RoverOperator
     {
         ICommands cmd = null;
         

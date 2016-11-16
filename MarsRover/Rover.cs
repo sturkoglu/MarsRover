@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MarsRovers
 {
-    class Rover
+    public class Rover
     {
         private short xCoordinate;
         private short yCoordinate;
@@ -15,25 +15,23 @@ namespace MarsRovers
 
         public RoverOperator roverOperator;
         public ICommands roverCommand;
-        public Plateau plateau;
 
-        public Rover(short xCoordinate, short yCoordinate, char direction, short xBorder, short yBorder) 
+        public Rover(short xCoordinate, short yCoordinate, char direction) 
         {
             this.xCoordinate = xCoordinate;
             this.yCoordinate = yCoordinate;
             this.direction = direction;
-
-            this.plateau = new Plateau(xBorder, yBorder);
         }
 
-        public void ExecuteCommandQueue() 
+
+        public void ExecuteCommandQueue(Plateau plateau) 
         {
             RoverOperator roverOperator = new RoverOperator();
 
             for (int i = 0; i < commandQueue.Count(); i++)
             {
                 roverCommand = roverOperator.GetCommand(commandQueue[i]);
-                roverCommand.Execute(this, this.plateau);
+                roverCommand.Execute(this, plateau);
             }
         }
 

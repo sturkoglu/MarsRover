@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MarsRovers
 {
-    interface ICommands
+    public interface ICommands
     {
         void Execute(Rover rover, Plateau plateau);
         //Left ve Right donuslarinde kotrol yapilmasi analiz edilir ise Interface sinifina BorderCotrol methodu eklebilir

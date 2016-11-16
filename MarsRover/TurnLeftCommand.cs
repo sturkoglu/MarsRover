@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MarsRovers
 {
-    class TurnLeftCommand : ICommands
+    public class TurnLeftCommand : ICommands
     {
         public void Execute(Rover rover, Plateau plateau)
         {

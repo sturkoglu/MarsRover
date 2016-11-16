@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace MarsRovers
 {
-    class MoveCommand : ICommands
+    public class MoveCommand : ICommands
     {
+
         public void Execute(Rover rover, Plateau plateau)
         {
             switch (rover.Direction) 

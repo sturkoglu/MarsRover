@@ -16,14 +16,13 @@ namespace MarsRovers
             //string secondRoverInitialPosition = Console.ReadLine();
             //string secondRoverCommandQueue = Console.ReadLine();
 
-            string plateauArea = "5 5";
-            string firstRoverInitialPosition = "1 2 N";
             string firstRoverCommandQueue = "LMMMMLMLMLRM";
-
-            Rover rover = new Rover(1, 2, 'N', 5, 5);
+            
+            Plateau plateau = new Plateau(5, 5);
+            Rover rover = new Rover(1, 2, 'N');
             rover.commandQueue = firstRoverCommandQueue.ToCharArray();
 
-            rover.ExecuteCommandQueue();
+            rover.ExecuteCommandQueue(plateau);
             Console.ReadLine();
         }
     }

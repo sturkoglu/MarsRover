@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MarsRovers
 {
-    class Plateau
+    public class Plateau
     {
         private short xBorder;
         private short yBorder;
