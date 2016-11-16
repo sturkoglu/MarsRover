@@ -8,6 +8,8 @@ namespace MarsRovers
 {
     interface ICommands
     {
-        void Execute(Rover rover);
+        void Execute(Rover rover, Plateau plateau);
+        //Left ve Right donuslarinde kotrol yapilmasi analiz edilir ise Interface sinifina BorderCotrol methodu eklebilir
+        //bool BorderControl();
     }
 }

@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MoveCommand.cs" />
+    <Compile Include="Plateau.cs" />
     <Compile Include="RoverOperator.cs" />
     <Compile Include="ICommands.cs" />
     <Compile Include="Program.cs" />

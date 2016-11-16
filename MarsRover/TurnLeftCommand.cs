@@ -8,21 +8,21 @@ namespace MarsRovers
 {
     class TurnLeftCommand : ICommands
     {
-        public void Execute(Rover rover)
+        public void Execute(Rover rover, Plateau plateau)
         {
-            switch (rover.direction)
+            switch (rover.Direction)
             {
                 case 'N':
-                    rover.direction = 'W';
+                    rover.Direction = 'W';
                     break;
                 case 'E':
-                    rover.direction = 'N';
+                    rover.Direction = 'N';
                     break;
                 case 'S':
-                    rover.direction = 'E';
+                    rover.Direction = 'E';
                     break;
                 case 'W':
-                    rover.direction = 'S';
+                    rover.Direction = 'S';
                     break;
                 default:
                     break;
