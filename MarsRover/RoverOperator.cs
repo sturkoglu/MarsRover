@@ -8,26 +8,22 @@ namespace MarsRovers
 {
     public class RoverOperator
     {
-        ICommands cmd = null;
+        ICommand cmd = null;
         
-        public ICommands GetCommand(char operant, out bool isValidCommand)
+        public ICommand GetCommand(char operant)
         {
             switch (operant)
             {
                 case 'M':
                     cmd = new CommandMove();
-                    isValidCommand = true;
                     break;
                 case 'L':
                     cmd = new CommandTurnLeft();
-                    isValidCommand = true;
                     break;
                 case 'R':
                     cmd = new CommandTurnRight();
-                    isValidCommand = true;
                     break;
                 default:
-                    isValidCommand = false;
                     break;
             }
             return cmd;

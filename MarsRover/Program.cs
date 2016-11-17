@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,16 @@ namespace MarsRovers
             //string firstRoverCommandQueue = Console.ReadLine();
             //string secondRoverInitialPosition = Console.ReadLine();
             //string secondRoverCommandQueue = Console.ReadLine();
+            string inputFileName = "input.txt";
+            string outputFileName = "output.txt";
+            
+            List<Rover> rovers = null;
+
+            InputDocument documentOperations = new InputDocument(inputFileName, outputFileName);
+
+
+            rovers = documentOperations.GetRoversInformationFromDocument();
+
 
             string firstRoverCommandQueue = "LMMMMLMLMLRM";
             

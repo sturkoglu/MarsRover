@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace MarsRovers
 {
-    public class CommandParameters
+    public class CommandParameter
     {
         private short xCoordinateParameter;
         private short yCoordinateParameter;
         private char directionParameter;
 
-        public CommandParameters(short xCoordinateParameter, short yCoordinateParameter, char directionParameter) 
+        public CommandParameter(short xCoordinateParameter, short yCoordinateParameter, char directionParameter) 
         {
             this.xCoordinateParameter = xCoordinateParameter;
             this.yCoordinateParameter = yCoordinateParameter;

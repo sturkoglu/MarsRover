@@ -14,7 +14,7 @@ namespace MarsRovers
         public char[] commandQueue;
 
         public RoverOperator roverOperator;
-        public ICommands roverCommand;
+        public ICommand roverCommand;
 
         public Rover(short xCoordinate, short yCoordinate, char direction) 
         {
@@ -23,26 +23,26 @@ namespace MarsRovers
             this.direction = direction;
         }
 
-
         public void ExecuteCommandQueue(Plateau plateau) 
         {
+            RoverOperator roverOperator = new RoverOperator();
+            CommandParameter inputParameters = null, outputParameters = null;
+
             try
             {
-                RoverOperator roverOperator = new RoverOperator();
-                bool isValidCommand = false;
-
                 for (int i = 0; i < commandQueue.Count(); i++)
                 {
-                    CommandParameters commandParameters = new CommandParameters(this.xCoordinate, this.yCoordinate, this.direction);
+                    inputParameters = GetRoverParameters();
 
-                    roverCommand = roverOperator.GetCommand(commandQueue[i], out isValidCommand);
-                    if (isValidCommand)
+                    roverCommand = roverOperator.GetCommand(commandQueue[i]);
+                    if (roverCommand == null)
                     {
-                        roverCommand.Execute(commandParameters, plateau);
+                        Console.WriteLine("Invalid command '" + commandQueue[i] + "' had been canceled");
                     }
                     else 
                     {
-                        Console.WriteLine("Invalid command '" + commandQueue[i] + "' had been canceled");
+                        outputParameters = roverCommand.Execute(inputParameters, plateau);
+                        UpdateRoverParameters(outputParameters);
                     }
                 }
             }
@@ -50,6 +50,19 @@ namespace MarsRovers
             {
                 Console.WriteLine(ex.Message);
             }
+        }
+
+        private void UpdateRoverParameters(CommandParameter outputParameters)
+        {
+            this.XCoordinate = outputParameters.XCoordinateParameter;
+            this.YCoordinate = outputParameters.XCoordinateParameter;
+            this.Direction = outputParameters.DirectionParameter;
+        }
+
+        private CommandParameter GetRoverParameters() 
+        {
+            CommandParameter commandParameters = new CommandParameter(this.XCoordinate, this.YCoordinate, this.Direction);
+            return commandParameters;
         }
 
         public short XCoordinate

@@ -8,6 +8,6 @@ namespace MarsRovers
 {
     interface IBorderControls
     {
-        bool MoveCommandBorderControl(CommandParameters commandParameter, Plateau plateau);
+        bool MoveCommandBorderControl(CommandParameter commandParameter, Plateau plateau);
     }
 }

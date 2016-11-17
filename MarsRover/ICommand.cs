@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace MarsRovers
 {
-    public interface ICommands
+    public interface ICommand
     {
-        void Execute(CommandParameters commandParameter, Plateau plateau);
+        CommandParameter Execute(CommandParameter commandParameter, Plateau plateau);
     }
 }
