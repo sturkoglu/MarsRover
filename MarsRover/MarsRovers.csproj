@@ -42,15 +42,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MoveCommand.cs" />
+    <Compile Include="CommandParameters.cs" />
+    <Compile Include="IBorderControls.cs" />
+    <Compile Include="CommandMove.cs" />
     <Compile Include="Plateau.cs" />
     <Compile Include="RoverOperator.cs" />
     <Compile Include="ICommands.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rover.cs" />
-    <Compile Include="TurnLeftCommand.cs" />
-    <Compile Include="TurnRightCommand.cs" />
+    <Compile Include="CommandTurnLeft.cs" />
+    <Compile Include="CommandTurnRight.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

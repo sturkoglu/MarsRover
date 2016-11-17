@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace MarsRovers
 {
-    public interface ICommands
+    interface IBorderControls
     {
-        void Execute(CommandParameters commandParameter, Plateau plateau);
+        bool MoveCommandBorderControl(CommandParameters commandParameter, Plateau plateau);
     }
 }

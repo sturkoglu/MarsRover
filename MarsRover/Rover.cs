@@ -26,12 +26,29 @@ namespace MarsRovers
 
         public void ExecuteCommandQueue(Plateau plateau) 
         {
-            RoverOperator roverOperator = new RoverOperator();
-
-            for (int i = 0; i < commandQueue.Count(); i++)
+            try
             {
-                roverCommand = roverOperator.GetCommand(commandQueue[i]);
-                roverCommand.Execute(this, plateau);
+                RoverOperator roverOperator = new RoverOperator();
+                bool isValidCommand = false;
+
+                for (int i = 0; i < commandQueue.Count(); i++)
+                {
+                    CommandParameters commandParameters = new CommandParameters(this.xCoordinate, this.yCoordinate, this.direction);
+
+                    roverCommand = roverOperator.GetCommand(commandQueue[i], out isValidCommand);
+                    if (isValidCommand)
+                    {
+                        roverCommand.Execute(commandParameters, plateau);
+                    }
+                    else 
+                    {
+                        Console.WriteLine("Invalid command '" + commandQueue[i] + "' had been canceled");
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
 

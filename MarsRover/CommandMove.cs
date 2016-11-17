@@ -6,59 +6,59 @@ using System.Threading.Tasks;
 
 namespace MarsRovers
 {
-    public class MoveCommand : ICommands
+    public class CommandMove : ICommands,  IBorderControls
     {
 
-        public void Execute(Rover rover, Plateau plateau)
+        public void Execute(CommandParameters commandParameter, Plateau plateau)
         {
-            switch (rover.Direction) 
+            switch (commandParameter.DirectionParameter) 
             {
                 case 'N':
-                    if (BorderControl(rover, plateau))
-                        rover.YCoordinate++;
+                    if (MoveCommandBorderControl(commandParameter, plateau))
+                        commandParameter.YCoordinateParameter++;
                     break;
                 case 'E':
-                    if (BorderControl(rover, plateau))
-                        rover.XCoordinate++;
+                    if (MoveCommandBorderControl(commandParameter, plateau))
+                        commandParameter.XCoordinateParameter++;
                     break;
                 case 'S':
-                    if (BorderControl(rover, plateau))
-                        rover.YCoordinate--;
+                    if (MoveCommandBorderControl(commandParameter, plateau))
+                        commandParameter.YCoordinateParameter--;
                     break;
                 case 'W':
-                    if (BorderControl(rover, plateau))
-                        rover.XCoordinate--;
+                    if (MoveCommandBorderControl(commandParameter, plateau))
+                        commandParameter.XCoordinateParameter--;
                     break;
             }
         }
 
-        public bool BorderControl(Rover rover, Plateau plateau) 
+        public bool MoveCommandBorderControl(CommandParameters commandParameter, Plateau plateau) 
         {
-            switch (rover.Direction)
+            switch (commandParameter.DirectionParameter)
             {
                 case 'N':
-                    if (rover.YCoordinate >= plateau.YBorder)
+                    if (commandParameter.YCoordinateParameter >= plateau.YBorder)
                     {
                         Console.WriteLine("Rover had reached to the North border of the plateau, Move command canceled!");
                         return false;
                     }
                     break;
                 case 'E':
-                    if (rover.XCoordinate >= plateau.XBorder)
+                    if (commandParameter.XCoordinateParameter >= plateau.XBorder)
                     {
                         Console.WriteLine("Rover had reached to the East border of the plateau, Move command canceled!");
                         return false;
                     }
                     break;
                 case 'S':
-                    if (rover.YCoordinate <= 0)
+                    if (commandParameter.YCoordinateParameter <= 0)
                     {
                         Console.WriteLine("Rover had reached to the South border of the plateau, Move command canceled!");
                         return false;
                     }
                     break;
                 case 'W':
-                    if (rover.XCoordinate <= 0)
+                    if (commandParameter.XCoordinateParameter <= 0)
                     {
                         Console.WriteLine("Rover had reached to the West border of the plateau, Move command canceled!");
                         return false;

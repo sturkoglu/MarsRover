@@ -6,27 +6,27 @@ using System.Threading.Tasks;
 
 namespace MarsRovers
 {
-    public class TurnRightCommand : ICommands
+    public class CommandTurnLeft : ICommands
     {
-        public void Execute(Rover rover, Plateau plateau)
+        public void Execute(CommandParameters commandParameter, Plateau plateau)
         {
-            switch (rover.Direction)
+            switch (commandParameter.DirectionParameter)
             {
                 case 'N':
-                    rover.Direction = 'E';
+                    commandParameter.DirectionParameter = 'W';
                     break;
                 case 'E':
-                    rover.Direction = 'S';
+                    commandParameter.DirectionParameter = 'N';
                     break;
                 case 'S':
-                    rover.Direction = 'W';
+                    commandParameter.DirectionParameter = 'E';
                     break;
                 case 'W':
-                    rover.Direction = 'N';
+                    commandParameter.DirectionParameter = 'S';
                     break;
                 default:
                     break;
             }
         }
-    } 
+    }
 }

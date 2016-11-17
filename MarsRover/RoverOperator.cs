@@ -10,20 +10,24 @@ namespace MarsRovers
     {
         ICommands cmd = null;
         
-        public ICommands GetCommand(char operant)
+        public ICommands GetCommand(char operant, out bool isValidCommand)
         {
             switch (operant)
             {
                 case 'M':
-                    cmd = new MoveCommand();
+                    cmd = new CommandMove();
+                    isValidCommand = true;
                     break;
                 case 'L':
-                    cmd = new TurnLeftCommand();
+                    cmd = new CommandTurnLeft();
+                    isValidCommand = true;
                     break;
                 case 'R':
-                    cmd = new TurnRightCommand();
+                    cmd = new CommandTurnRight();
+                    isValidCommand = true;
                     break;
                 default:
+                    isValidCommand = false;
                     break;
             }
             return cmd;
