@@ -7,53 +7,42 @@ using System.Threading.Tasks;
 
 namespace MarsRovers
 {
-    public class InputDocument
+    public class InputDocument : IDocumentRead
     {
-        public string inputDocumentName;
-        public string outputDocumentName;
+        private string inputDocumentName;
+        private string path;
 
-        private List<string> inputs = null;
-
-        public InputDocument(string inputDocumentName, string outputDocumentName) 
+        public InputDocument(string inputDocumentName) 
         {
             this.inputDocumentName = inputDocumentName;
-            this.outputDocumentName = outputDocumentName;
+            this.path = Path.Combine(Directory.GetCurrentDirectory(), inputDocumentName);
         }
 
-        private void ReadDocument(string inputDocumentName) 
+        public List<string> ReadDocument() 
         {
             string line = "";
-            List<string> lines = null;
+            List<string> lines = new List<string>();
 
-            string path = Path.Combine(Directory.GetCurrentDirectory(), inputDocumentName);
-
-            if (IsDocumentExist(path)) 
+            if (IsDocumentExist(this.path)) 
             {
-                using (StreamReader sr = File.OpenText(path))
+                using (StreamReader sr = File.OpenText(this.path))
                 {
                     while ((line = sr.ReadLine()) != null)
                     {
                         lines.Add(line);
                     }
                 }
-                inputs = lines;
             }
 
+            return lines;
         }
 
-        private bool IsDocumentExist(string path) 
+        public bool IsDocumentExist(string path) 
         {
-            if (!File.Exists(path))
+            if (File.Exists(path))
                 return true;
             else
                 return false;
-        }
-
-        internal List<Rover> GetRoversInformationFromDocument()
-        {
-            ReadDocument(this.inputDocumentName);
-
-            return null;
         }
     }
 }

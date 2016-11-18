@@ -11,29 +11,27 @@ namespace MarsRovers
 
         public CommandParameter Execute(CommandParameter inputParameters, Plateau plateau)
         {
-            CommandParameter outputParameters = inputParameters;
-
             switch (inputParameters.DirectionParameter) 
             {
                 case 'N':
                     if (MoveCommandBorderControl(inputParameters, plateau))
-                        outputParameters.YCoordinateParameter++;
+                        inputParameters.YCoordinateParameter++;
                     break;
                 case 'E':
                     if (MoveCommandBorderControl(inputParameters, plateau))
-                        outputParameters.XCoordinateParameter++;
+                        inputParameters.XCoordinateParameter++;
                     break;
                 case 'S':
                     if (MoveCommandBorderControl(inputParameters, plateau))
-                        outputParameters.YCoordinateParameter--;
+                        inputParameters.YCoordinateParameter--;
                     break;
                 case 'W':
                     if (MoveCommandBorderControl(inputParameters, plateau))
-                        outputParameters.XCoordinateParameter--;
+                        inputParameters.XCoordinateParameter--;
                     break;
             }
 
-            return outputParameters;
+            return inputParameters;
         }
 
         public bool MoveCommandBorderControl(CommandParameter inputParameters, Plateau plateau) 

@@ -10,26 +10,24 @@ namespace MarsRovers
     {
         public CommandParameter Execute(CommandParameter inputParameters, Plateau plateau)
         {
-            CommandParameter outputParameters = inputParameters;
-
             switch (inputParameters.DirectionParameter)
             {
                 case 'N':
-                    outputParameters.DirectionParameter = 'W';
+                    inputParameters.DirectionParameter = 'W';
                     break;
                 case 'E':
-                    outputParameters.DirectionParameter = 'N';
+                    inputParameters.DirectionParameter = 'N';
                     break;
                 case 'S':
-                    outputParameters.DirectionParameter = 'E';
+                    inputParameters.DirectionParameter = 'E';
                     break;
                 case 'W':
-                    outputParameters.DirectionParameter = 'S';
+                    inputParameters.DirectionParameter = 'S';
                     break;
                 default:
                     break;
             }
-            return outputParameters;
+            return inputParameters;
         }
     }
 }

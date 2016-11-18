@@ -43,10 +43,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommandParameter.cs" />
+    <Compile Include="IDocumentWrite.cs" />
     <Compile Include="InputDocument.cs" />
     <Compile Include="IBorderControls.cs" />
     <Compile Include="CommandMove.cs" />
-    <Compile Include="IDocument.cs" />
+    <Compile Include="IDocumentRead.cs" />
+    <Compile Include="MarsEnvironmet.cs" />
+    <Compile Include="OutputDocument.cs" />
     <Compile Include="Plateau.cs" />
     <Compile Include="RoverOperator.cs" />
     <Compile Include="ICommand.cs" />

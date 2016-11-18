@@ -11,29 +11,34 @@ namespace MarsRovers
     {
         static void Main(string[] args)
         {
-            //string plateauArea = Console.ReadLine();
-            //string firstRoverInitialPosition = Console.ReadLine();
-            //string firstRoverCommandQueue = Console.ReadLine();
-            //string secondRoverInitialPosition = Console.ReadLine();
-            //string secondRoverCommandQueue = Console.ReadLine();
-            string inputFileName = "input.txt";
-            string outputFileName = "output.txt";
-            
+            Plateau plateau;
             List<Rover> rovers = null;
 
-            InputDocument documentOperations = new InputDocument(inputFileName, outputFileName);
+            MarsEnvironmet marsEnvironment;
+            OutputDocument outputDocument;
+
+            string inputFileName = "input.txt";
+            string outputFileName = "output.txt";
 
 
-            rovers = documentOperations.GetRoversInformationFromDocument();
-
-
-            string firstRoverCommandQueue = "LMMMMLMLMLRM";
+            marsEnvironment = new MarsEnvironmet(inputFileName);
+            outputDocument = new OutputDocument(outputFileName);
             
-            Plateau plateau = new Plateau(5, 5);
-            Rover rover = new Rover(1, 2, 'N');
-            rover.commandQueue = firstRoverCommandQueue.ToCharArray();
+            plateau = marsEnvironment.GetPlateau();
+            
+            rovers = marsEnvironment.GetRovers();
 
-            rover.ExecuteCommandQueue(plateau);
+            if (plateau != null && rovers != null)
+            {
+                foreach (Rover rover in rovers)
+                {
+                    rover.ExecuteCommandQueue(plateau);
+                    outputDocument.AddLineToDocument(rover.XCoordinate.ToString() + " " + rover.YCoordinate.ToString() + " " + rover.Direction.ToString());
+                }
+            }else
+                Console.WriteLine("Incorrect Input, please check the input file again");
+
+            Console.WriteLine("Press Enter to Exit");
             Console.ReadLine();
         }
     }

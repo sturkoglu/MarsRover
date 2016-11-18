@@ -9,17 +9,124 @@ namespace UnitTestProject
     public class MoveCommandTest
     {
         [TestMethod]
-        public void MeveCommand_North_Border_Test()
+        public void MoveCommand_Test()
         {
             // arrange
-            //Rover rover = new Rover(1, 2, 'N', 5, 5);
-
-            //var account = new CheckingAccount("JohnDoe", currentBalance);
+            Plateau plateau = new Plateau(5, 5);
+            CommandParameter commandParameter = new CommandParameter(1, 3, 'N');
+            CommandMove commandMove = new CommandMove();
             // act
-            //account.Withdraw(withdrawal);
-            //double actual = account.Balance;
+
+            var result = commandMove.MoveCommandBorderControl(commandParameter, plateau);
+
             // assert
-            //Assert.AreEqual(expected, actual);
+            Assert.AreEqual(true, result);
         }
+
+        [TestMethod]
+        public void MoveCommand_Testv2()
+        {
+            // arrange
+            Plateau plateau = new Plateau(5, 5);
+            CommandParameter commandParameter = new CommandParameter(4, 3, 'E');
+            CommandMove commandMove = new CommandMove();
+            // act
+
+            var result = commandMove.MoveCommandBorderControl(commandParameter, plateau);
+
+            // assert
+            Assert.AreEqual(true, result);
+        }
+
+        [TestMethod]
+        public void MoveCommand_North_Border_Test()
+        {
+            // arrange
+            Plateau plateau = new Plateau(5, 5);
+            CommandParameter commandParameter = new CommandParameter(1, 5, 'N');
+            CommandMove commandMove = new CommandMove();
+            // act
+
+            var result = commandMove.MoveCommandBorderControl(commandParameter, plateau);
+            
+            // assert
+            Assert.AreEqual(false, result);
+        }
+
+        [TestMethod]
+        public void MoveCommand_Testv3()
+        {
+            // arrange
+            Plateau plateau = new Plateau(5, 5);
+            CommandParameter commandParameter = new CommandParameter(4, 3, 'E');
+            CommandMove commandMove = new CommandMove();
+            // act
+
+            var result = commandMove.MoveCommandBorderControl(commandParameter, plateau);
+
+            // assert
+            Assert.AreEqual(true, result);
+        }
+
+        [TestMethod]
+        public void MoveCommand_East_Border_Test()
+        {
+            // arrange
+            Plateau plateau = new Plateau(5, 5);
+            CommandParameter commandParameter = new CommandParameter(5, 3, 'E');
+            CommandMove commandMove = new CommandMove();
+            // act
+
+            var result = commandMove.MoveCommandBorderControl(commandParameter, plateau);
+
+            // assert
+            Assert.AreEqual(false, result);
+        }
+
+        [TestMethod]
+        public void MoveCommand_South_Border_Test()
+        {
+            // arrange
+            Plateau plateau = new Plateau(5, 5);
+            CommandParameter commandParameter = new CommandParameter(3, 0, 'S');
+            CommandMove commandMove = new CommandMove();
+            // act
+
+            var result = commandMove.MoveCommandBorderControl(commandParameter, plateau);
+
+            // assert
+            Assert.AreEqual(false, result);
+        }
+
+        [TestMethod]
+        public void MoveCommand_West_Border_Test()
+        {
+            // arrange
+            Plateau plateau = new Plateau(5, 5);
+            CommandParameter commandParameter = new CommandParameter(0, 5, 'W');
+            CommandMove commandMove = new CommandMove();
+            // act
+
+            var result = commandMove.MoveCommandBorderControl(commandParameter, plateau);
+
+            // assert
+            Assert.AreEqual(false, result);
+        }
+
+        [TestMethod]
+        public void MoveCommand_WrongDirection_Test()
+        {
+            // arrange
+            Plateau plateau = new Plateau(5, 5);
+            CommandParameter commandParameter = new CommandParameter(4, 3, 'T');
+            CommandMove commandMove = new CommandMove();
+            // act
+
+            var result = commandMove.MoveCommandBorderControl(commandParameter, plateau);
+
+            // assert
+            Assert.AreEqual(true, result);
+        }
+
     }
 }

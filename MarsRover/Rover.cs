@@ -55,7 +55,7 @@ namespace MarsRovers
         private void UpdateRoverParameters(CommandParameter outputParameters)
         {
             this.XCoordinate = outputParameters.XCoordinateParameter;
-            this.YCoordinate = outputParameters.XCoordinateParameter;
+            this.YCoordinate = outputParameters.YCoordinateParameter;
             this.Direction = outputParameters.DirectionParameter;
         }
 
