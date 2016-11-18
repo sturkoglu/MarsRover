@@ -39,7 +39,6 @@ namespace MarsRovers
             this.inputs = GetInputs();
             if (inputs != null)
             {
-
                 for (int i = 1; i < inputs.Count(); i += 2)
                 {
                     parameters = inputs[i].Split(' ');
@@ -55,7 +54,7 @@ namespace MarsRovers
 
         private List<string> GetInputs() 
         {
-            InputDocument inputDocument = new InputDocument(this.inputDocumentName);
+            DocumentInput inputDocument = new DocumentInput(this.inputDocumentName);
             return inputDocument.ReadDocument();
         }
     }

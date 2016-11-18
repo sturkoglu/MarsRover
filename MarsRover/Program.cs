@@ -15,14 +15,16 @@ namespace MarsRovers
             List<Rover> rovers = null;
 
             MarsEnvironmet marsEnvironment;
-            OutputDocument outputDocument;
+            DocumentOutput outputDocument;
 
             string inputFileName = "input.txt";
             string outputFileName = "output.txt";
 
+            Console.WriteLine("Press Enter to Start");
+            Console.ReadLine();
 
             marsEnvironment = new MarsEnvironmet(inputFileName);
-            outputDocument = new OutputDocument(outputFileName);
+            outputDocument = new DocumentOutput(outputFileName);
             
             plateau = marsEnvironment.GetPlateau();
             

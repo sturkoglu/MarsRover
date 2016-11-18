@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace MarsRovers
 {
-    public class InputDocument : IDocumentRead
+    public class DocumentInput : IDocumentRead
     {
         private string inputDocumentName;
         private string path;
 
-        public InputDocument(string inputDocumentName) 
+        public DocumentInput(string inputDocumentName) 
         {
             this.inputDocumentName = inputDocumentName;
             this.path = Path.Combine(Directory.GetCurrentDirectory(), inputDocumentName);

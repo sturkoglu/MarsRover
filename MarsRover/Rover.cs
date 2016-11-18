@@ -16,39 +16,32 @@ namespace MarsRovers
         public RoverOperator roverOperator;
         public ICommand roverCommand;
 
-        public Rover(short xCoordinate, short yCoordinate, char direction) 
+        public Rover(short xCoordinate, short yCoordinate, char direction)
         {
             this.xCoordinate = xCoordinate;
             this.yCoordinate = yCoordinate;
             this.direction = direction;
         }
 
-        public void ExecuteCommandQueue(Plateau plateau) 
+        public void ExecuteCommandQueue(Plateau plateau)
         {
             RoverOperator roverOperator = new RoverOperator();
             CommandParameter inputParameters = null, outputParameters = null;
 
-            try
+            for (int i = 0; i < commandQueue.Count(); i++)
             {
-                for (int i = 0; i < commandQueue.Count(); i++)
-                {
-                    inputParameters = GetRoverParameters();
+                inputParameters = GetRoverParameters();
 
-                    roverCommand = roverOperator.GetCommand(commandQueue[i]);
-                    if (roverCommand == null)
-                    {
-                        Console.WriteLine("Invalid command '" + commandQueue[i] + "' had been canceled");
-                    }
-                    else 
-                    {
-                        outputParameters = roverCommand.Execute(inputParameters, plateau);
-                        UpdateRoverParameters(outputParameters);
-                    }
+                roverCommand = roverOperator.GetCommand(commandQueue[i]);
+                if (roverCommand == null)
+                {
+                    Console.WriteLine("Invalid command '" + commandQueue[i] + "' had been canceled");
                 }
-            }
-            catch(Exception ex)
-            {
-                Console.WriteLine(ex.Message);
+                else
+                {
+                    outputParameters = roverCommand.Execute(inputParameters, plateau);
+                    UpdateRoverParameters(outputParameters);
+                }
             }
         }
 
@@ -59,7 +52,7 @@ namespace MarsRovers
             this.Direction = outputParameters.DirectionParameter;
         }
 
-        private CommandParameter GetRoverParameters() 
+        private CommandParameter GetRoverParameters()
         {
             CommandParameter commandParameters = new CommandParameter(this.XCoordinate, this.YCoordinate, this.Direction);
             return commandParameters;

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace MarsRovers
 {
+    //Parameter Object for ICommand Execute method
     public class CommandParameter
     {
         private short xCoordinateParameter;
