@@ -1,8 +1,0 @@
-{
-  "runtimeOptions": {
-    "additionalProbingPaths": [
-      "C:\\Users\\sturk\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\sturk\\.nuget\\packages"
-    ]
-  }
-}
