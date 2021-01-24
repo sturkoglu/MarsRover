@@ -73,13 +73,10 @@ namespace MarsRovers.Tests.Steps
             var plateau = _scenarioContext.Get<Plateau>();
             var rover = _scenarioContext.Get<Rover>();
 
-            roverOperator.SendEnvironment(plateau);
-            roverOperator.ConnectTo(rover);
+            roverOperator.Add(plateau);
+            roverOperator.Add(rover);
 
-            foreach (var roverCommand in rover.Commands)
-            {
-                roverOperator.Execute(roverCommand);
-            }
+            roverOperator.Execute();
         }
 
 

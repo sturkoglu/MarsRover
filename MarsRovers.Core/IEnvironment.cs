@@ -2,6 +2,6 @@
 {
     public interface IEnvironment<T>
     {
-        void SendEnvironment(T environment);
+        void Add(T environment);
     }
 }

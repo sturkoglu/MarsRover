@@ -2,6 +2,6 @@
 {
     public interface IOperator<T>
     {
-        void ConnectTo(T operatee);
+        void Add(T operatee);
     }
 }

@@ -5,3 +5,12 @@
 /MarsRover/obj/Debug
 /MarsRover/.vs/MarsRovers/v16
 /MarsRover/bin/Debug
+**/.vscode/
+**/.vs/
+**/[Oo]bj/
+**/[Bb]in/
+**/*.log
+*.user
+.ionide/
+**/TestResults
+*.feature.cs

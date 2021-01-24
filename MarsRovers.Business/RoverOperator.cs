@@ -16,12 +16,12 @@ namespace MarsRovers.Business
             _logger = logger;
         }
 
-        public void ConnectTo(IRover rover)
+        public void Add(IRover rover)
         {
             _rover = rover as Rover;
         }
 
-        public void SendEnvironment(IPlateau plateau)
+        public void Add(IPlateau plateau)
         {
             _plateau = plateau as Plateau;
         }
@@ -29,26 +29,29 @@ namespace MarsRovers.Business
         public (short xCoordinate, short yCoordinate, DirectionType direction) GetRoverPosition() => 
             (_rover.XCoordinate, _rover.YCoordinate, _rover.Direction);
 
-        public void Execute(CommandType command)
+        public void Execute()
         {
-            switch (command)
+            foreach (var command in _rover.Commands)
             {
-                case CommandType.M:
-                    if (CanMove())
-                        _rover.Move();
-                    break;
-                case CommandType.L:
-                    _rover.TurnLeft();
-                    break;
-                case CommandType.R:
-                    _rover.TurnRight();
-                    break;
-                default:
-                    _logger.LogError("Invalid command argument");
-                    break;
-            }
+                switch (command)
+                {
+                    case CommandType.M:
+                        if (CanMove())
+                            _rover.Move();
+                        break;
+                    case CommandType.L:
+                        _rover.TurnLeft();
+                        break;
+                    case CommandType.R:
+                        _rover.TurnRight();
+                        break;
+                    default:
+                        _logger.LogError("Invalid command argument");
+                        break;
+                }
 
-            _logger.LogInformation($"Command {command} executed");
+                _logger.LogInformation($"Command {command} executed");
+            }
         }
 
         private bool CanMove()

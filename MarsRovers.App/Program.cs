@@ -12,7 +12,7 @@ namespace MarsRovers.App
         static void Main(string[] args)
         {
             var serviceCollection = new ServiceCollection();
-            
+
             RegisterDependencies(serviceCollection);
 
             var serviceProvider = serviceCollection.BuildServiceProvider();
@@ -20,9 +20,9 @@ namespace MarsRovers.App
             var logger = serviceProvider.GetService<ILoggerFactory>().CreateLogger<Program>();
 
             logger.LogInformation("Starting application");
-            
+
             Run(serviceProvider);
-            
+
             logger.LogInformation("All done!");
         }
 
@@ -45,28 +45,26 @@ namespace MarsRovers.App
                 logger.LogError("Incorrect Input, please check the input file again");
                 Console.WriteLine("No command found");
                 Exit();
+                return;
             }
 
             var plateau = commandService.GetPlateau(commandLines);
             var rovers = commandService.GetRovers(commandLines);
-
 
             if (plateau == null || !rovers.Any())
             {
                 logger.LogError("Incorrect Input, please check the input file again");
                 Console.WriteLine("Command is not valid");
                 Exit();
+                return;
             }
+
+            roverOperator.Add(plateau);
 
             foreach (var rover in rovers)
             {
-                roverOperator.ConnectTo(rover);
-                roverOperator.SendEnvironment(plateau);
-
-                foreach (var command in rover.Commands)
-                {
-                    roverOperator.Execute(command);
-                }
+                roverOperator.Add(rover);
+                roverOperator.Execute();
 
                 var roverPosition = roverOperator.GetRoverPosition();
                 Console.WriteLine($"Rover position; {roverPosition.xCoordinate} {roverPosition.yCoordinate} {roverPosition.direction}");
