@@ -26,7 +26,6 @@ namespace MarsRovers.App
             logger.LogInformation("All done!");
         }
 
-
         private static void Run(IServiceProvider serviceProvider)
         {
             var logger = serviceProvider.GetService<ILogger<Program>>();
