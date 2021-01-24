@@ -1,0 +1,27 @@
+﻿2021-01-24T11:52:18.4489158+01:00;VSTestExecutionThread;Info;SpecFlow+Runner execution started
+2021-01-24T11:52:18.4490652+01:00;VSTestExecutionThread;Info;SpecFlow+Runner 3.4.19 in Framework netcore31 in x64 mode execution started
+2021-01-24T11:52:18.4490690+01:00;VSTestExecutionThread;Info;TestAdapter Location: C:\Workspace\MarsRover\MarsRovers.Tests\bin\Debug\netcoreapp3.1\TechTalk.SpecRun.VisualStudio.TestAdapter.dll
+2021-01-24T11:52:18.4502801+01:00;VSTestExecutionThread;Info;Current UserName: 'sturk', MachineName: 'DESKTOP-23NJECV'
+2021-01-24T11:52:18.4715285+01:00;VSTestExecutionThread;Info;SpecRun: running tests in C:\Workspace\MarsRover\MarsRovers.Tests\bin\Debug\netcoreapp3.1\MarsRovers.Tests.dll
+2021-01-24T11:52:18.4716945+01:00;VSTestExecutionThread;Info;Output folder configured to "C:\Workspace\MarsRover\TestResults" (default)
+2021-01-24T11:52:18.4717386+01:00;VSTestExecutionThread;Info;Profile: 
+2021-01-24T11:52:18.5014727+01:00;VSTestExecutionThread;Info;Log file path: C:\Workspace\MarsRover\TestResults\Unnamed project__2021-01-24T115218.log
+2021-01-24T11:52:18.5050739+01:00;Thread#12;Info;Checking activation
+2021-01-24T11:52:19.3109589+01:00;Thread#12;Error;****************************************************************************************************************
+2021-01-24T11:52:19.3114416+01:00;Thread#12;Error;*                                           SpecFlow+ Runner                                                   *
+2021-01-24T11:52:19.3114942+01:00;Thread#12;Error;****************************************************************************************************************
+2021-01-24T11:52:19.3116945+01:00;Thread#12;Error;Please sign-up for your free SpecFlow account or sign-in with your already existing account here:
+2021-01-24T11:52:19.3117669+01:00;Thread#12;Error;https://account.specflow.org/clientactivation/welcome/Runner/F4B5571B933F45499A059DA46932269CBF2E016FAEB5A2C0B21DDE4C8B869CED585159A9/NotActivatedYet
+2021-01-24T11:52:19.3118073+01:00;Thread#12;Error;to execute your Scenarios again.
+2021-01-24T11:52:19.3119003+01:00;Thread#12;Error;If you are reading this message on a build agent, we couldn't recognize the agent.
+2021-01-24T11:52:19.3119492+01:00;Thread#12;Error;Please get in touch with us at support@specflow.org.
+2021-01-24T11:52:19.3120404+01:00;Thread#12;Error;****************************************************************************************************************
+2021-01-24T11:52:19.3143880+01:00;Thread#12;Error;No tests executed (activation needed)
+2021-01-24T11:52:19.3245720+01:00:Total: 0
+2021-01-24T11:52:19.3260510+01:00:Succeeded: 0
+2021-01-24T11:52:19.3262872+01:00:Ignored: 0
+2021-01-24T11:52:19.3264899+01:00:Pending: 0
+2021-01-24T11:52:19.3270254+01:00:Skipped: 0
+2021-01-24T11:52:19.3272601+01:00:Failed: 0
+2021-01-24T11:52:19.3318446+01:00;VSTestExecutionThread;Info;Adding attachments to VSTest
+========== End of log file ==========

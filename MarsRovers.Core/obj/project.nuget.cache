@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "Q9ZZTyZV+RngGH6Fy8qLgEUz2YFr/DPNHguNE0VUKh2X0SgXSKb2MVdj5Yqfe5pGLyFw5YY74JeONBBT2l7K+w==",
+  "success": true,
+  "projectFilePath": "C:\\Workspace\\MarsRover\\MarsRovers.Core\\MarsRovers.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\sturk\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\sturk\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

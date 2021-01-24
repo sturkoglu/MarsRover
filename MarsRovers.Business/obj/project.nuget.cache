@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "LPnIBwPll8D5MUZU9M9JBRYZ40j3+TSF3Wnu2xRWw2FGY1OpQf5Y5jHqY0S/iAo8S0II+DPotqCbItQO6ZEwcA==",
+  "success": true,
+  "projectFilePath": "C:\\Workspace\\MarsRover\\MarsRovers.Business\\MarsRovers.Business.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\sturk\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\5.0.0\\microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\sturk\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\sturk\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,12 @@
+C:\Workspace\MarsRover\MarsRovers.Business\bin\Debug\netstandard2.0\MarsRovers.Business.deps.json
+C:\Workspace\MarsRover\MarsRovers.Business\bin\Debug\netstandard2.0\MarsRovers.Business.dll
+C:\Workspace\MarsRover\MarsRovers.Business\bin\Debug\netstandard2.0\MarsRovers.Business.pdb
+C:\Workspace\MarsRover\MarsRovers.Business\bin\Debug\netstandard2.0\MarsRovers.Core.dll
+C:\Workspace\MarsRover\MarsRovers.Business\bin\Debug\netstandard2.0\MarsRovers.Core.pdb
+C:\Workspace\MarsRover\MarsRovers.Business\obj\Debug\netstandard2.0\MarsRovers.Business.csprojAssemblyReference.cache
+C:\Workspace\MarsRover\MarsRovers.Business\obj\Debug\netstandard2.0\MarsRovers.Business.AssemblyInfoInputs.cache
+C:\Workspace\MarsRover\MarsRovers.Business\obj\Debug\netstandard2.0\MarsRovers.Business.AssemblyInfo.cs
+C:\Workspace\MarsRover\MarsRovers.Business\obj\Debug\netstandard2.0\MarsRovers.Business.csproj.CoreCompileInputs.cache
+C:\Workspace\MarsRover\MarsRovers.Business\obj\Debug\netstandard2.0\MarsRovers.Business.csproj.CopyComplete
+C:\Workspace\MarsRover\MarsRovers.Business\obj\Debug\netstandard2.0\MarsRovers.Business.dll
+C:\Workspace\MarsRover\MarsRovers.Business\obj\Debug\netstandard2.0\MarsRovers.Business.pdb
